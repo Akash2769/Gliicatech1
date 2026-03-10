@@ -2077,26 +2077,19 @@
   ════════════════════════════════════════════════════════ -->
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    /* ── Navbar scroll behaviour ──────────────────────────── */
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
-    }, { passive: true });
-
-    /* ── Mobile nav ───────────────────────────────────────── */
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const mobileMenu   = document.getElementById('mobileMenu');
-    hamburgerBtn.addEventListener('click', () => {
-      const open = mobileMenu.classList.toggle('open');
-      hamburgerBtn.setAttribute('aria-expanded', open);
-    });
-    // Close mobile menu on link click
-    mobileMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        hamburgerBtn.setAttribute('aria-expanded', 'false');
-      });
-    });
+   const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburgerBtn.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburgerBtn.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+  }));
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('assets/js/sw.js');
 
     /* ── Smooth scroll for hash links ─────────────────────── */
     document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -2144,7 +2137,6 @@
         });
       });
     });
-	if ('serviceWorker' in navigator) navigator.serviceWorker.register('assets/js/sw.js');
 </script>
 </body>
 </html>
