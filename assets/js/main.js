@@ -59,7 +59,7 @@
       submitBtn.textContent = 'Sending…';
       submitBtn.disabled = true;
 
-      emailjs.send('service_wsdxd7y', 'template_3c9bvvf', {
+      emailjs.send('service_5gdt4a6', 'template_3c9bvvf', {
         name:    form.name.value,
         email:   form.email.value,
         phone:   form.phone.value,
