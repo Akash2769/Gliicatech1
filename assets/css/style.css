@@ -223,7 +223,7 @@ ul   { list-style: none; }
   gap: 10px;
 }
 .nav-logo-img {
-  height: 50px;
+  height: 65px;
   width: auto;
   object-fit: contain;
 }
